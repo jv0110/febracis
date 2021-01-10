@@ -1,0 +1,58 @@
+.lead-container{
+  @include container_custom(500px);
+  padding: 40px 16px;
+  color: #FFFFFF;
+  @media screen and (min-width: 768px){
+    padding: 20px 16px;
+  }
+  @media screen and (min-width: 1200px){
+    margin: initial;
+  }
+  .heading{
+    font-size: 16px;
+    font-weight: 800;
+    padding: 20px 0;
+    @media screen and (min-width: 768px){
+      padding-top: 120px;
+      font-size: 18px;
+    }
+  }
+  .btn{
+    @include btn_round;
+  }
+  .btn.wpp{
+    border: 3px solid #FFFFFF;
+    background-color: $green;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 14px;
+  }
+  .lead-form{
+    input, .btn{
+      border-radius: 20px;
+    }
+    ::placeholder{
+      color: #000000;
+    }
+    input{
+      margin-bottom: 14px;
+      &.select{
+        background-color: transparent;
+        border: 2px solid #FFFFFF;
+        &::-webkit-input-placeholder{
+          color: #FFFFFF;
+        }
+      }
+    }
+    .btn{
+      background-color: $yellow;
+      color: #000000;
+      font-weight: 400;
+      width: 150px;
+      .icon{
+        transform: translateX(10px);
+        font-size: 12px;
+      }
+    }
+  }
+}

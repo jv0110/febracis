@@ -1,0 +1,66 @@
+.method-section{
+  position: relative;
+  @media screen and (min-width: 768px){
+    height: 350px;
+  }
+  @media screen and (min-width: 992px){
+    height: 450px;
+  }
+  @media screen and (min-width: 1200px){
+    height: 560px;
+  }
+  @media screen and (min-width: 1500px){
+    height: 670px;
+  }
+  @media screen and (min-width: 1800px){
+    height: 790px;
+  }
+  video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .container{
+    @include container_custom(1200px);
+  }
+  .content{
+    background-color: rgba(0, 0, 0, 0.7);
+    position: relative;
+    z-index: 100;
+    color: #FFFFFF;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    padding: 20px 16px;
+    @media screen and (min-width: 768px){
+      padding-bottom: 80px;
+    }
+    .heading{
+      font-weight: 800;
+      font-size: 20px;
+      @media screen and (min-width: 768px){
+        font-size: 26px;
+      }
+      @media screen and (min-width: 992px){
+        font-size: 30px;
+      }
+    }
+    .text{
+      padding: 14px 0;
+    }
+    .btn{
+      @include btn_round;
+      background-color: $yellow;
+      color: #000000;
+      padding: 5px 14px;
+      .icon{
+        padding-left: 20px;
+        font-size: 12px;
+      }
+    }
+  }
+}

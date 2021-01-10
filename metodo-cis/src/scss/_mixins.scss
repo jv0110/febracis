@@ -1,0 +1,18 @@
+@mixin bg_image($img){
+  background-image: url($img);
+  background-position: left center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+@mixin btn_round(){
+  transition: 0.2s ease-in-out;
+  border-radius: 20px;
+  padding: 5px 10px;
+  &:hover{
+    transform: scale(1.1);
+  }
+}
+@mixin container_custom($size){
+  max-width: $size;
+  margin: 0 auto;
+}

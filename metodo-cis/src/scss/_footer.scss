@@ -1,0 +1,42 @@
+.page-footer{
+  background-color: $dark-grey;
+  padding: 60px 0 40px 0;
+  @media screen and (min-width: 992px){
+    padding: 90px 0 10px 0;
+  }
+  &, a{
+    color: #FFFFFF;
+  }
+  a{
+    &:hover{
+      color: $yellow;
+    }
+  }
+  .heading{
+    font-weight: 800;
+    font-size: 14px;
+  }
+  .social{
+    display: flex;
+    flex-direction: column;
+    padding-top: 40px;
+    .items{
+      display: flex;
+      justify-content: center;
+      @media screen and (min-width: 992px){
+        justify-content: flex-start;
+      }
+    }
+    .list-item{
+      padding: 10px;
+    }
+    .icon{
+      font-size: 20px;
+    }
+  }
+  .copy{
+    border-top: 1px solid #262626;
+    font-size: 14px;
+    padding-top: 14px;
+  }
+}
