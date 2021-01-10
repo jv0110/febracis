@@ -6,6 +6,7 @@ const sourcemaps = require('gulp-sourcemaps');
 const autoprefixer = require('gulp-autoprefixer');
 const imagemin = require('gulp-imagemin');
 const htmlmin = require('gulp-cleanhtml');
+const autoPrefixer = require('gulp-autoprefixer');
 
 gulp.task('optimage', function(done){
   gulp.src('./src/assets/images/*')
@@ -15,7 +16,7 @@ gulp.task('optimage', function(done){
 });
 
 gulp.task('workflow', function(done){
-  gulp.src('./src/scss/index.scss')
+  gulp.src('./src/scss/**/*.scss')
   .pipe(sourcemaps.init())
   .pipe(sass().on('error', sass.logError))
   .pipe(autoprefixer({
@@ -23,8 +24,21 @@ gulp.task('workflow', function(done){
   }))
   .pipe(cssnano())
   .pipe(sourcemaps.write('./'))
-  .pipe(gulp.dest('./src/css'))
   .pipe(gulp.dest('./dist/css'))
+  done();
+});
+
+/* ------- generates a scss for dev purposes --------- */
+gulp.task('gencssdev', function(done){
+  gulp.src('./src/scss/**/*.scss')
+  .pipe(sourcemaps.init())
+  .pipe(sass().on('error', sass.logError))
+  .pipe(autoPrefixer({
+    cascade: false
+  }))
+  .pipe(sourcemaps.write('./'))
+  .pipe(gulp.dest('./src/css'))
+
   done();
 });
 
@@ -32,13 +46,6 @@ gulp.task('htmlmin', function(done){
   gulp.src('./src/**/*.html')
   .pipe(htmlmin({ collapseWhitespace: true }))
   .pipe(gulp.dest('./dist'))
-
-  done();
-});
-
-gulp.task('copyfonts', function(done){
-  gulp.src('./src/assets/fonts/*')
-  .pipe(gulp.dest('./dist/assets/fonts'))
 
   done();
 });
@@ -59,5 +66,6 @@ gulp.task('copyvideos', function(done){
 
 gulp.task('default', function (){
   gulp.watch('./src/scss/**/*.scss', gulp.series('workflow'));
+  gulp.watch('./src/scss/**/*.scss', gulp.series('gencssdev'));
   gulp.watch('./src/**/*.html', gulp.series('htmlmin'));
 });
