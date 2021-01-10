@@ -1,47 +1,47 @@
 .about{
- @include bg_image('../assets/images/about-bg.png');
- position: relative;
-  color: #FFFFFF;
-  @media screen and (max-width: 575px){
-    background-position-x: -300px;
-  }
-  @media screen and (min-width: 576px) and (max-width: 680px){
-    background-position-x: -220px;
-  }
-  @media screen and (min-width: 768px){
-    height: 630px;
-    background-position-x: -200px;
-  }
-  @media screen and (min-width: 1200px){
-    background-position-x: -100px;
-  }
-  @media screen and (min-width: 1330px){
-    background-position-x: left;
-  }
-  .container{
-    @include container_custom(1020px);
-    padding: 40px 16px;
-    @media screen and (min-width: 1200px){
-      padding: 0;
-    }
-  }
-  .row, .container, .text-content{
-    height: 100%;
-  }
-  .text-content{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  .heading{
-    color: $yellow;
-    font-weight: 800;
-  }
-  .text{
-    br{
-      @media screen and (max-width: 1199px){
-        display: none;
-      }
-    }
-  }
-}
+  @include bg_image('../assets/images/about-bg.png');
+  position: relative;
+   color: #FFFFFF;
+   @media screen and (max-width: 530px){
+     background-position-x: -700px;
+   }
+   @media screen and (min-width: 576px) and (max-width: 670px){
+     background-position-x: -400px;
+   }
+   @media screen and (min-width: 768px){
+     height: 630px;
+     background-position-x: -200px;
+   }
+   @media screen and (min-width: 1200px){
+     background-position-x: -100px;
+   }
+   @media screen and (min-width: 1330px){
+     background-position-x: left;
+   }
+   .container{
+     @include container_custom(1020px);
+     padding: 40px 16px;
+     @media screen and (min-width: 1200px){
+       padding: 0;
+     }
+   }
+   .row, .container, .text-content{
+     height: 100%;
+   }
+   .text-content{
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+   }
+   .heading{
+     color: $yellow;
+     font-weight: 800;
+   }
+   .text{
+     br{
+       @media screen and (max-width: 1199px){
+         display: none;
+       }
+     }
+   }
+ }
